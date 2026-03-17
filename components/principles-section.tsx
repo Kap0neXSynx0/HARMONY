@@ -19,7 +19,7 @@ export function PrinciplesSection() {
         { text: "CALITATE", highlight: true },
         { text: " NATURALĂ", highlight: false },
       ],
-      description: "Ingrediente pure, selectate cu grijă, pentru rezultate excepționale. Fiecare produs este testat riguros.",
+      description: "Ingrediente pure, selectate cu grijă, pentru rezultate excepționale. Fiecare produs este testat riguros pentru a garanta cele mai înalte standarde de calitate. Nu facem compromisuri când vine vorba de sănătatea clienților noștri.",
       align: "left",
     },
     {
@@ -28,7 +28,7 @@ export function PrinciplesSection() {
         { text: "SUSTENABILITATE", highlight: true },
         { text: " REALĂ", highlight: false },
       ],
-      description: "Ambalaje reciclabile, producție eco-friendly și un angajament real față de protejarea mediului.",
+      description: "Ambalaje reciclabile, producție eco-friendly și un angajament real față de protejarea mediului. Ne asigurăm că fiecare etapă a procesului de producție minimizează impactul asupra naturii. Viitorul planetei este responsabilitatea noastră.",
       align: "right",
     },
     {
@@ -37,7 +37,7 @@ export function PrinciplesSection() {
         { text: "ARMONIE ", highlight: false },
         { text: "COMPLETĂ", highlight: true },
       ],
-      description: "Echilibru perfect între natură și știință. Produse care respectă atât pielea, cât și planeta.",
+      description: "Echilibru perfect între natură și știință. Produse care respectă atât pielea, cât și planeta. Credem că adevărata frumusețe vine din armonia dintre ingredientele naturale și formulările moderne, validate științific.",
       align: "left",
     },
     {
@@ -46,7 +46,7 @@ export function PrinciplesSection() {
         { text: "TRANSPARENȚĂ ", highlight: false },
         { text: "TOTALĂ", highlight: true },
       ],
-      description: "Ingrediente vizibile, procese deschise. Știi exact ce aplici pe pielea ta — fără secrete.",
+      description: "Ingrediente vizibile, procese deschise. Știi exact ce aplici pe pielea ta — fără secrete, fără ingrediente ascunse. Publicăm lista completă de ingrediente și sursa fiecăruia, pentru că meriti să faci alegeri informate.",
       align: "right",
     },
   ]
@@ -93,8 +93,12 @@ export function PrinciplesSection() {
     <section ref={sectionRef} id="principles" className="relative py-32 pl-6 md:pl-28 pr-6 md:pr-12">
       {/* Section header */}
       <div ref={headerRef} className="mb-24">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">04 / Valori</span>
+        <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">04 / Valori</span>
         <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">VALORILE NOASTRE</h2>
+        <p className="mt-4 max-w-2xl font-mono text-sm md:text-base text-muted-foreground leading-relaxed">
+          Valorile Pure Harmony stau la baza fiecărei decizii pe care o luăm. De la selecția ingredientelor
+          până la modul în care ne tratăm clienții, aceste principii ne definesc identitatea.
+        </p>
       </div>
 
       {/* Staggered principles */}
@@ -107,7 +111,7 @@ export function PrinciplesSection() {
             }`}
           >
             {/* Annotation label */}
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
               {principle.number} / {principle.titleParts[0].text.split(" ")[0]}
             </span>
 
@@ -124,7 +128,7 @@ export function PrinciplesSection() {
             </h3>
 
             {/* Description */}
-            <p className="mt-6 max-w-md font-mono text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-6 max-w-lg font-mono text-sm md:text-base text-muted-foreground leading-relaxed">
               {principle.description}
             </p>
 

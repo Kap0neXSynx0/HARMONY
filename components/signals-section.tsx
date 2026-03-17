@@ -11,27 +11,42 @@ const signals = [
   {
     date: "Viziune",
     title: "Viziunea Companiei",
-    note: "Pure Harmony își propune să devină lider pe piața produselor cosmetice naturale din România, promovând un stil de viață sănătos și sustenabil.",
+    note: "Pure Harmony își propune să devină lider pe piața produselor cosmetice naturale din România, promovând un stil de viață sănătos și sustenabil. Ne dorim ca fiecare persoană să aibă acces la produse cosmetice de calitate, realizate exclusiv din ingrediente naturale.",
   },
   {
     date: "Valori",
     title: "Valorile Companiei",
-    note: "Calitate, Sustenabilitate, Conștiență ecologică și Diversitate — principiile care ne ghidează în tot ceea ce facem.",
+    note: "Calitate, Sustenabilitate, Conștiență ecologică și Diversitate — principiile care ne ghidează în tot ceea ce facem. Credem că frumusețea adevărată vine din respectul față de natură și din alegerea ingredientelor potrivite pentru fiecare tip de piele.",
   },
   {
     date: "Afacere",
     title: "Ideea de Afacere",
-    note: "Produse cosmetice naturale realizate din ingrediente organice, fără substanțe chimice nocive, pentru persoane care își doresc un stil de viață natural.",
+    note: "Produse cosmetice naturale realizate din ingrediente organice, fără substanțe chimice nocive, pentru persoane care își doresc un stil de viață natural. Combinăm rețete tradiționale cu tehnologii moderne de producție pentru rezultate excepționale.",
   },
   {
     date: "Motivație",
     title: "De Ce Pure Harmony?",
-    note: "Ingrediente 100% naturale, ambalaje reciclabile, producție eco-friendly și prețuri accesibile pentru toți consumatorii conștienți.",
+    note: "Ingrediente 100% naturale, ambalaje reciclabile, producție eco-friendly și prețuri accesibile pentru toți consumatorii conștienți. Fiecare produs poartă amprenta pasiunii noastre pentru natură și a angajamentului față de sănătatea clienților.",
   },
   {
     date: "Piață",
     title: "Piața Țintă",
-    note: "Persoane conștiente de mediu, cu vârsta între 18-45 ani, care aleg produse naturale și sustenabile pentru îngrijirea personală.",
+    note: "Persoane conștiente de mediu, cu vârsta între 18-45 ani, care aleg produse naturale și sustenabile pentru îngrijirea personală. Piața cosmenticelor naturale crește cu 15% anual în România, iar noi suntem poziționați perfect pentru acest trend.",
+  },
+  {
+    date: "Certificări",
+    title: "Standarde & Certificări",
+    note: "Toate produsele noastre sunt certificate organic conform standardelor europene. Deținem certificări ECOCERT și COSMOS ORGANIC, garantând puritatea și calitatea fiecărui ingredient utilizat în formulele noastre.",
+  },
+  {
+    date: "Istorie",
+    title: "Povestea Noastră",
+    note: "Fondată din pasiunea pentru produse naturale, Pure Harmony a început ca un mic atelier artizanal. În 2026, ne-am transformat într-o companie cu o gamă completă de produse cosmetice, păstrând aceleași valori de la început: naturalețe, calitate și respect.",
+  },
+  {
+    date: "Comunitate",
+    title: "Comunitatea Pure Harmony",
+    note: "Am construit o comunitate de peste 1000 de persoane care împărtășesc aceleași valori. Organizăm ateliere de producție naturală, evenimente eco-friendly și campanii de conștientizare a beneficiilor produselor naturale.",
   },
 ]
 
@@ -106,7 +121,7 @@ export function SignalsSection() {
             x: 0,
             opacity: 1,
             duration: 0.8,
-            stagger: 0.2,
+            stagger: 0.15,
             ease: "power3.out",
             scrollTrigger: {
               trigger: cardsRef.current,
@@ -135,8 +150,12 @@ export function SignalsSection() {
 
       {/* Section header */}
       <div ref={headerRef} className="mb-16 pr-6 md:pr-12">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">01 / Prezentare</span>
+        <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">01 / Prezentare</span>
         <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">DESPRE COMPANIE</h2>
+        <p className="mt-4 max-w-2xl font-mono text-sm md:text-base text-muted-foreground leading-relaxed">
+          Pure Harmony S.R.L. este o companie românească dedicată creării de produse cosmetice naturale de cea mai
+          înaltă calitate. Descoperă viziunea, valorile și povestea din spatele brandului nostru.
+        </p>
       </div>
 
       {/* Horizontal scroll container */}
@@ -172,16 +191,16 @@ function SignalCard({
       )}
     >
       {/* Card with paper texture effect */}
-      <div className="relative bg-card border border-border/50 md:border-t md:border-l md:border-r-0 md:border-b-0 p-8">
+      <div className="relative bg-white/70 backdrop-blur-sm border border-border/50 md:border-t md:border-l md:border-r-0 md:border-b-0 p-8">
         {/* Top torn edge effect */}
         <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
 
         {/* Issue number - editorial style */}
         <div className="flex items-baseline justify-between mb-8">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
             No. {String(index + 1).padStart(2, "0")}
           </span>
-          <time className="font-mono text-[10px] text-muted-foreground/60">{signal.date}</time>
+          <time className="font-mono text-[11px] text-muted-foreground/60">{signal.date}</time>
         </div>
 
         {/* Title */}
@@ -193,7 +212,7 @@ function SignalCard({
         <div className="w-12 h-px bg-accent/60 mb-6 group-hover:w-full transition-all duration-500" />
 
         {/* Description */}
-        <p className="font-mono text-xs text-muted-foreground leading-relaxed">{signal.note}</p>
+        <p className="font-mono text-xs md:text-sm text-muted-foreground leading-relaxed">{signal.note}</p>
 
         {/* Bottom right corner fold effect */}
         <div className="absolute bottom-0 right-0 w-6 h-6 overflow-hidden">

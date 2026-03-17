@@ -11,37 +11,37 @@ const processes = [
   {
     title: "Ingrediente Naturale",
     medium: "Selecție",
-    description: "Selectăm cele mai pure ingrediente naturale și organice de la furnizori locali certificați.",
+    description: "Selectăm cele mai pure ingrediente naturale și organice de la furnizori locali certificați. Fiecare ingredient este verificat pentru puritate și calitate înainte de a intra în producție.",
     span: "col-span-2 row-span-2",
   },
   {
     title: "Producție Ecologică",
     medium: "Fabricare",
-    description: "Procesul de producție respectă normele ecologice, fără emisii nocive și cu consum redus de energie.",
+    description: "Procesul de producție respectă normele ecologice, fără emisii nocive și cu consum redus de energie. Utilizăm echipamente moderne cu impact minim asupra mediului.",
     span: "col-span-1 row-span-1",
   },
   {
     title: "Ambalare Sustenabilă",
     medium: "Ambalaje",
-    description: "Folosim ambalaje 100% reciclabile și biodegradabile pentru protejarea mediului.",
+    description: "Folosim ambalaje 100% reciclabile și biodegradabile pentru protejarea mediului. Designul ambalajelor reflectă angajamentul nostru față de sustenabilitate.",
     span: "col-span-1 row-span-2",
   },
   {
     title: "Control Calitate",
     medium: "Testare",
-    description: "Fiecare produs trece prin verificări riguroase pentru a asigura cele mai înalte standarde.",
+    description: "Fiecare produs trece prin verificări riguroase pentru a asigura cele mai înalte standarde. Testăm puritatea, eficacitatea și siguranța la fiecare lot.",
     span: "col-span-1 row-span-1",
   },
   {
     title: "Livrare Verde",
     medium: "Transport",
-    description: "Transport eco-friendly cu ambalaje minime și opțiuni de livrare sustenabile.",
+    description: "Transport eco-friendly cu ambalaje minime și opțiuni de livrare sustenabile. Colaborăm cu curieri care folosesc vehicule electrice sau cu emisii reduse.",
     span: "col-span-2 row-span-1",
   },
   {
     title: "Feedback Clienți",
     medium: "Îmbunătățire",
-    description: "Ascultăm clienții noștri pentru a îmbunătăți continuu produsele și serviciile oferite.",
+    description: "Ascultăm clienții noștri pentru a îmbunătăți continuu produsele și serviciile oferite. Fiecare recenzie și sugestie contribuie la evoluția noastră.",
     span: "col-span-1 row-span-1",
   },
 ]
@@ -98,10 +98,14 @@ export function WorkSection() {
       {/* Section header */}
       <div ref={headerRef} className="mb-16 flex items-end justify-between">
         <div>
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">02 / Producție</span>
+          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">02 / Producție</span>
           <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">PROCESUL NOSTRU</h2>
+          <p className="mt-4 max-w-lg font-mono text-sm md:text-base text-muted-foreground leading-relaxed">
+            Fiecare produs Pure Harmony parcurge un proces riguros de la selecția ingredientelor până la livrarea
+            finală. Transparența și calitatea sunt în centrul a tot ceea ce facem.
+          </p>
         </div>
-        <p className="hidden md:block max-w-xs font-mono text-xs text-muted-foreground text-right leading-relaxed">
+        <p className="hidden md:block max-w-xs font-mono text-sm text-muted-foreground text-right leading-relaxed">
           De la ingrediente naturale la produsul final — fiecare etapă este gândită pentru sustenabilitate și calitate.
         </p>
       </div>
@@ -157,7 +161,7 @@ function WorkCard({
     <article
       ref={cardRef}
       className={cn(
-        "group relative border border-border/40 p-5 flex flex-col justify-between transition-all duration-500 cursor-pointer overflow-hidden",
+        "group relative border border-border/40 p-5 flex flex-col justify-between transition-all duration-500 cursor-pointer overflow-hidden bg-white/40 backdrop-blur-sm",
         experiment.span,
         isActive && "border-accent/60",
       )}
@@ -174,7 +178,7 @@ function WorkCard({
 
       {/* Content */}
       <div className="relative z-10">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+        <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
           {experiment.medium}
         </span>
         <h3
@@ -191,7 +195,7 @@ function WorkCard({
       <div className="relative z-10">
         <p
           className={cn(
-            "font-mono text-xs text-muted-foreground leading-relaxed transition-all duration-500 max-w-[280px]",
+            "font-mono text-xs md:text-sm text-muted-foreground leading-relaxed transition-all duration-500 max-w-[320px]",
             isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2",
           )}
         >
@@ -202,7 +206,7 @@ function WorkCard({
       {/* Index marker */}
       <span
         className={cn(
-          "absolute bottom-4 right-4 font-mono text-[10px] transition-colors duration-300",
+          "absolute bottom-4 right-4 font-mono text-[11px] transition-colors duration-300",
           isActive ? "text-accent" : "text-muted-foreground/40",
         )}
       >

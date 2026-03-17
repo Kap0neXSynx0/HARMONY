@@ -75,68 +75,84 @@ export function ColophonSection() {
     >
       {/* Section header */}
       <div ref={headerRef} className="mb-16">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">05 / Contact</span>
-        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">CONTACT</h2>
+        <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">09 / Contact</span>
+        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">CONTACT & INFORMAȚII</h2>
+        <p className="mt-4 max-w-lg font-mono text-sm text-muted-foreground leading-relaxed">
+          Ne poți contacta oricând pentru comenzi, întrebări sau colaborări. Echipa noastră este mereu disponibilă.
+        </p>
       </div>
 
       {/* Multi-column layout */}
       <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12">
         {/* Companie */}
         <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Companie</h4>
+          <h4 className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Companie</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">Pure Harmony S.R.L.</li>
-            <li className="font-mono text-xs text-foreground/80">Produse Naturale</li>
+            <li className="font-mono text-sm text-foreground/80">Pure Harmony S.R.L.</li>
+            <li className="font-mono text-sm text-foreground/80">Produse Naturale</li>
+            <li className="font-mono text-sm text-foreground/80">CUI: RO12345678</li>
           </ul>
         </div>
 
         {/* Sediu */}
         <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Sediu</h4>
+          <h4 className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Sediu</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">România</li>
-            <li className="font-mono text-xs text-foreground/80">București</li>
+            <li className="font-mono text-sm text-foreground/80">România</li>
+            <li className="font-mono text-sm text-foreground/80">București, Sector 1</li>
+            <li className="font-mono text-sm text-foreground/80">Str. Naturii Nr. 42</li>
           </ul>
         </div>
 
         {/* Produse */}
         <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Produse</h4>
+          <h4 className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Produse</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">Cosmetice Naturale</li>
-            <li className="font-mono text-xs text-foreground/80">Uleiuri Esențiale</li>
-            <li className="font-mono text-xs text-foreground/80">Îngrijire Personală</li>
+            <li className="font-mono text-sm text-foreground/80">Cosmetice Naturale</li>
+            <li className="font-mono text-sm text-foreground/80">Uleiuri Esențiale</li>
+            <li className="font-mono text-sm text-foreground/80">Îngrijire Personală</li>
+            <li className="font-mono text-sm text-foreground/80">Aromaterapie</li>
           </ul>
         </div>
 
         {/* Echipa */}
         <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Echipa</h4>
+          <h4 className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Echipa</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">Director General</li>
-            <li className="font-mono text-xs text-foreground/80">Manager Producție</li>
-            <li className="font-mono text-xs text-foreground/80">Manager Marketing</li>
+            <li className="font-mono text-sm text-foreground/80">Director General</li>
+            <li className="font-mono text-sm text-foreground/80">Manager Producție</li>
+            <li className="font-mono text-sm text-foreground/80">Manager Marketing</li>
+            <li className="font-mono text-sm text-foreground/80">Manager Vânzări</li>
           </ul>
         </div>
 
         {/* Contact */}
         <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Contact</h4>
+          <h4 className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Contact</h4>
           <ul className="space-y-2">
             <li>
               <a
                 href="mailto:contact@pureharmony.ro"
-                className="font-mono text-xs text-foreground/80 hover:text-accent transition-colors duration-200"
+                className="font-mono text-sm text-foreground/80 hover:text-accent transition-colors duration-200"
               >
-                Email
+                contact@pureharmony.ro
+              </a>
+            </li>
+            <li className="font-mono text-sm text-foreground/80">+40 721 234 567</li>
+            <li>
+              <a
+                href="#"
+                className="font-mono text-sm text-foreground/80 hover:text-accent transition-colors duration-200"
+              >
+                Instagram
               </a>
             </li>
             <li>
               <a
                 href="#"
-                className="font-mono text-xs text-foreground/80 hover:text-accent transition-colors duration-200"
+                className="font-mono text-sm text-foreground/80 hover:text-accent transition-colors duration-200"
               >
-                Instagram
+                Facebook
               </a>
             </li>
           </ul>
@@ -144,10 +160,11 @@ export function ColophonSection() {
 
         {/* An */}
         <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">An</h4>
+          <h4 className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">An</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">2025</li>
-            <li className="font-mono text-xs text-foreground/80">În dezvoltare</li>
+            <li className="font-mono text-sm text-foreground/80">2026</li>
+            <li className="font-mono text-sm text-foreground/80">În dezvoltare</li>
+            <li className="font-mono text-sm text-foreground/80">Lansare Q2 2026</li>
           </ul>
         </div>
       </div>
@@ -157,10 +174,10 @@ export function ColophonSection() {
         ref={footerRef}
         className="mt-24 pt-8 border-t border-border/20 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
       >
-        <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
-          © 2025 Pure Harmony S.R.L. Toate drepturile rezervate.
+        <p className="font-mono text-[11px] text-muted-foreground uppercase tracking-widest">
+          © 2026 Pure Harmony S.R.L. Toate drepturile rezervate.
         </p>
-        <p className="font-mono text-[10px] text-muted-foreground">Creat cu grijă. Construit cu pasiune.</p>
+        <p className="font-mono text-[11px] text-muted-foreground">Creat cu grijă. Construit cu pasiune.</p>
       </div>
     </section>
   )
