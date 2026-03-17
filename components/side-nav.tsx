@@ -23,48 +23,36 @@ export function SideNav() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
+          if (entry.isIntersecting) setActiveSection(entry.target.id)
         })
       },
       { threshold: 0.3 },
     )
-
     navItems.forEach(({ id }) => {
-      const element = document.getElementById(id)
-      if (element) observer.observe(element)
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
     })
-
     return () => observer.disconnect()
   }, [])
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <nav className="fixed left-0 top-0 z-50 h-screen w-14 md:w-16 hidden md:flex flex-col justify-center border-r border-border/30 bg-background/80 backdrop-blur-sm">
+    <nav className="fixed left-0 top-0 z-50 h-screen w-12 md:w-14 hidden md:flex flex-col justify-center border-r border-white/8 bg-black/60 backdrop-blur-sm">
       <div className="flex flex-col gap-3 px-3">
         {navItems.map(({ id, label }) => (
           <button key={id} onClick={() => scrollToSection(id)} className="group relative flex items-center gap-2">
-            <span
-              className={cn(
-                "h-1 w-1 rounded-full transition-all duration-300",
-                activeSection === id ? "bg-accent scale-125" : "bg-muted-foreground/40 group-hover:bg-foreground/60",
-              )}
-            />
-            <span
-              className={cn(
-                "absolute left-5 font-mono text-[8px] uppercase tracking-widest opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:left-7 whitespace-nowrap",
-                activeSection === id ? "text-accent" : "text-muted-foreground",
-              )}
-            >
-              {label}
-            </span>
+            <span className={cn(
+              "h-1 w-1 rounded-full transition-all duration-300",
+              activeSection === id ? "bg-accent scale-150" : "bg-white/20 group-hover:bg-white/50",
+            )} />
+            <span className={cn(
+              "absolute left-4 font-mono text-[7px] uppercase tracking-widest opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:left-6 whitespace-nowrap",
+              activeSection === id ? "text-accent" : "text-white/50",
+            )}>{label}</span>
           </button>
         ))}
       </div>

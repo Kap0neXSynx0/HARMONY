@@ -113,7 +113,7 @@ export function DrawText({ text, className = "", duration = 0.08, delay = 0.5, s
         letterSpacing: "0.02em",
         fontFamily: "'Bebas Neue', sans-serif",
         display: "flex",
-        cursor: "pointer",
+
       }}
     >
       {characters.map((char, index) => (

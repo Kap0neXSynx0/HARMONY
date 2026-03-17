@@ -146,7 +146,7 @@ function SplitFlapTextInner({ text, className = "", speed = 50 }: SplitFlapTextP
 
   return (
     <div
-      className={`inline-flex gap-[0.08em] items-center cursor-pointer ${className}`}
+      className={`inline-flex gap-[0.08em] items-center ${className}`}
       aria-label={text}
       onMouseEnter={handleMouseEnter}
       style={{ perspective: "1000px" }}
