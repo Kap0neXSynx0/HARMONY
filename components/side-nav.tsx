@@ -47,19 +47,19 @@ export function SideNav() {
   }
 
   return (
-    <nav className="fixed left-0 top-0 z-50 h-screen w-16 md:w-20 hidden md:flex flex-col justify-center border-r border-border/30 bg-background/80 backdrop-blur-sm">
-      <div className="flex flex-col gap-4 px-4">
+    <nav className="fixed left-0 top-0 z-50 h-screen w-14 md:w-16 hidden md:flex flex-col justify-center border-r border-border/30 bg-background/80 backdrop-blur-sm">
+      <div className="flex flex-col gap-3 px-3">
         {navItems.map(({ id, label }) => (
-          <button key={id} onClick={() => scrollToSection(id)} className="group relative flex items-center gap-3">
+          <button key={id} onClick={() => scrollToSection(id)} className="group relative flex items-center gap-2">
             <span
               className={cn(
-                "h-1.5 w-1.5 rounded-full transition-all duration-300",
+                "h-1 w-1 rounded-full transition-all duration-300",
                 activeSection === id ? "bg-accent scale-125" : "bg-muted-foreground/40 group-hover:bg-foreground/60",
               )}
             />
             <span
               className={cn(
-                "absolute left-6 font-mono text-[10px] uppercase tracking-widest opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:left-8 whitespace-nowrap",
+                "absolute left-5 font-mono text-[8px] uppercase tracking-widest opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:left-7 whitespace-nowrap",
                 activeSection === id ? "text-accent" : "text-muted-foreground",
               )}
             >

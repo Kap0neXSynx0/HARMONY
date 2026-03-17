@@ -24,25 +24,25 @@ const testimonials = [
     name: "Elena S.",
     location: "Timișoara",
     rating: 5,
-    text: "Lumânarea aromată eco este preferata mea! Arde uniform, are un parfum delicat și natural, și durează mult. Calitate premium la un preț corect. Pure Harmony a devenit brandul meu de suflet.",
+    text: "Lumânarea aromată eco este preferata mea! Arde uniform, are un parfum delicat și natural, și durează mult. Calitate premium la un preț corect.",
   },
   {
     name: "Cristian D.",
     location: "Iași",
     rating: 4,
-    text: "Uleiul esențial de mentă este genial pentru aromaterapie. Îl folosesc zilnic și mă ajută să mă relaxez după o zi lungă. Calitatea se simte, iar livrarea a fost rapidă și în ambalaje eco.",
+    text: "Uleiul esențial de mentă este genial pentru aromaterapie. Îl folosesc zilnic și mă ajută să mă relaxez după o zi lungă. Calitatea se simte.",
   },
   {
     name: "Ioana R.",
     location: "Brașov",
     rating: 5,
-    text: "Șamponul organic cu rozmarin mi-a transformat părul! După doar câteva utilizări, părul meu este mai strălucitor și mai sănătos. Fără sulfați, fără parabeni — exact ce căutam de mult timp.",
+    text: "Șamponul organic cu rozmarin mi-a transformat părul! După doar câteva utilizări, părul meu este mai strălucitor și mai sănătos. Fără sulfați, fără parabeni.",
   },
   {
     name: "Alexandru T.",
     location: "Constanța",
     rating: 5,
-    text: "Am comandat balsamul de buze natural pentru soția mea și acum folosim amândoi produse Pure Harmony. Calitatea este excepțională, iar faptul că sunt eco-friendly ne face să ne simțim bine cu alegerile noastre.",
+    text: "Am comandat balsamul de buze natural pentru soția mea și acum folosim amândoi produse Pure Harmony. Calitatea este excepțională.",
   },
 ]
 
@@ -93,31 +93,28 @@ export function TestimonialsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="testimonials" className="relative py-32 pl-6 md:pl-28 pr-6 md:pr-12">
-      {/* Section header */}
-      <div ref={headerRef} className="mb-16">
-        <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">05 / Testimoniale</span>
-        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">CE SPUN CLIENȚII</h2>
-        <p className="mt-4 max-w-2xl font-mono text-sm md:text-base text-muted-foreground leading-relaxed">
+    <section ref={sectionRef} id="testimonials" className="relative py-24 pl-4 md:pl-24 pr-4 md:pr-10">
+      <div ref={headerRef} className="mb-12">
+        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-accent">05 / Testimoniale</span>
+        <h2 className="mt-3 font-[var(--font-bebas)] text-4xl md:text-6xl tracking-tight">CE SPUN CLIENȚII</h2>
+        <p className="mt-3 max-w-xl font-mono text-[11px] text-muted-foreground leading-relaxed">
           Feedback-ul clienților noștri este cea mai mare recompensă. Iată ce spun cei care au ales
-          produsele Pure Harmony pentru îngrijirea lor personală.
+          produsele Pure Harmony.
         </p>
       </div>
 
-      {/* Testimonials grid */}
-      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {testimonials.map((testimonial, index) => (
           <article
             key={index}
-            className="group relative bg-white/60 backdrop-blur-sm border border-border/40 p-8 transition-all duration-500 hover:border-accent/40 hover:shadow-lg"
+            className="group relative bg-white/50 backdrop-blur-sm border border-border/40 p-6 transition-all duration-500 hover:border-accent/40 hover:shadow-lg"
           >
-            {/* Stars */}
-            <div className="flex gap-1 mb-6">
+            <div className="flex gap-0.5 mb-4">
               {Array.from({ length: 5 }).map((_, i) => (
                 <span
                   key={i}
                   className={cn(
-                    "text-lg",
+                    "text-sm",
                     i < testimonial.rating ? "text-accent" : "text-border",
                   )}
                 >
@@ -126,22 +123,19 @@ export function TestimonialsSection() {
               ))}
             </div>
 
-            {/* Quote */}
-            <p className="font-mono text-xs md:text-sm text-foreground/80 leading-relaxed mb-8">
+            <p className="font-mono text-[10px] text-foreground/80 leading-relaxed mb-6">
               &ldquo;{testimonial.text}&rdquo;
             </p>
 
-            {/* Author */}
-            <div className="mt-auto border-t border-border/30 pt-4 flex items-center justify-between">
+            <div className="mt-auto border-t border-border/30 pt-3 flex items-center justify-between">
               <div>
-                <span className="font-mono text-sm font-semibold text-foreground">{testimonial.name}</span>
-                <span className="font-mono text-[11px] text-muted-foreground block">{testimonial.location}</span>
+                <span className="font-mono text-[11px] font-semibold text-foreground">{testimonial.name}</span>
+                <span className="font-mono text-[9px] text-muted-foreground block">{testimonial.location}</span>
               </div>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-accent">Verificat</span>
+              <span className="font-mono text-[8px] uppercase tracking-widest text-accent">Verificat</span>
             </div>
 
-            {/* Corner accent */}
-            <div className="absolute top-0 left-0 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="absolute top-0 left-0 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div className="absolute top-0 left-0 w-full h-[1px] bg-accent" />
               <div className="absolute top-0 left-0 w-[1px] h-full bg-accent" />
             </div>

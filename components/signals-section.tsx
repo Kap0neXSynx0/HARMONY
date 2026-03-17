@@ -95,7 +95,6 @@ export function SignalsSection() {
     if (!sectionRef.current || !headerRef.current || !cardsRef.current) return
 
     const ctx = gsap.context(() => {
-      // Header slide in from left
       gsap.fromTo(
         headerRef.current,
         { x: -60, opacity: 0 },
@@ -137,22 +136,22 @@ export function SignalsSection() {
   }, [])
 
   return (
-    <section id="signals" ref={sectionRef} className="relative py-32 pl-6 md:pl-28">
+    <section id="signals" ref={sectionRef} className="relative py-24 pl-4 md:pl-24">
       <div
         ref={cursorRef}
         className={cn(
           "pointer-events-none absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50",
-          "w-12 h-12 rounded-full border-2 border-accent bg-accent",
+          "w-10 h-10 rounded-full border-2 border-accent bg-accent",
           "transition-opacity duration-300",
           isHovering ? "opacity-100" : "opacity-0",
         )}
       />
 
       {/* Section header */}
-      <div ref={headerRef} className="mb-16 pr-6 md:pr-12">
-        <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">01 / Prezentare</span>
-        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">DESPRE COMPANIE</h2>
-        <p className="mt-4 max-w-2xl font-mono text-sm md:text-base text-muted-foreground leading-relaxed">
+      <div ref={headerRef} className="mb-12 pr-4 md:pr-10">
+        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-accent">01 / Prezentare</span>
+        <h2 className="mt-3 font-[var(--font-bebas)] text-4xl md:text-6xl tracking-tight">DESPRE COMPANIE</h2>
+        <p className="mt-3 max-w-xl font-mono text-[11px] text-muted-foreground leading-relaxed">
           Pure Harmony S.R.L. este o companie românească dedicată creării de produse cosmetice naturale de cea mai
           înaltă calitate. Descoperă viziunea, valorile și povestea din spatele brandului nostru.
         </p>
@@ -164,7 +163,7 @@ export function SignalsSection() {
           scrollRef.current = el
           cardsRef.current = el
         }}
-        className="flex gap-8 overflow-x-auto pb-8 pr-12 scrollbar-hide"
+        className="flex gap-6 overflow-x-auto pb-6 pr-10 scrollbar-hide"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {signals.map((signal, index) => (
@@ -185,42 +184,34 @@ function SignalCard({
   return (
     <article
       className={cn(
-        "group relative flex-shrink-0 w-80",
+        "group relative flex-shrink-0 w-72",
         "transition-transform duration-500 ease-out",
         "hover:-translate-y-2",
       )}
     >
-      {/* Card with paper texture effect */}
-      <div className="relative bg-white/70 backdrop-blur-sm border border-border/50 md:border-t md:border-l md:border-r-0 md:border-b-0 p-8">
-        {/* Top torn edge effect */}
+      <div className="relative bg-white/60 backdrop-blur-sm border border-border/50 md:border-t md:border-l md:border-r-0 md:border-b-0 p-6">
         <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
 
-        {/* Issue number - editorial style */}
-        <div className="flex items-baseline justify-between mb-8">
-          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="flex items-baseline justify-between mb-6">
+          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground">
             No. {String(index + 1).padStart(2, "0")}
           </span>
-          <time className="font-mono text-[11px] text-muted-foreground/60">{signal.date}</time>
+          <time className="font-mono text-[9px] text-muted-foreground/60">{signal.date}</time>
         </div>
 
-        {/* Title */}
-        <h3 className="font-[var(--font-bebas)] text-4xl tracking-tight mb-4 group-hover:text-accent transition-colors duration-300">
+        <h3 className="font-[var(--font-bebas)] text-3xl tracking-tight mb-3 group-hover:text-accent transition-colors duration-300">
           {signal.title}
         </h3>
 
-        {/* Divider line */}
-        <div className="w-12 h-px bg-accent/60 mb-6 group-hover:w-full transition-all duration-500" />
+        <div className="w-10 h-px bg-accent/60 mb-4 group-hover:w-full transition-all duration-500" />
 
-        {/* Description */}
-        <p className="font-mono text-xs md:text-sm text-muted-foreground leading-relaxed">{signal.note}</p>
+        <p className="font-mono text-[11px] text-muted-foreground leading-relaxed">{signal.note}</p>
 
-        {/* Bottom right corner fold effect */}
-        <div className="absolute bottom-0 right-0 w-6 h-6 overflow-hidden">
-          <div className="absolute bottom-0 right-0 w-8 h-8 bg-background rotate-45 translate-x-4 translate-y-4 border-t border-l border-border/30" />
+        <div className="absolute bottom-0 right-0 w-5 h-5 overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-7 h-7 bg-background rotate-45 translate-x-3.5 translate-y-3.5 border-t border-l border-border/30" />
         </div>
       </div>
 
-      {/* Shadow/depth layer */}
       <div className="absolute inset-0 -z-10 translate-x-1 translate-y-1 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </article>
   )

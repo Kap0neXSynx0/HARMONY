@@ -79,11 +79,7 @@
   html {
     overflow-x: hidden;
     max-width: 100vw;
-    scrollbar-width: thin;
-    scrollbar-color: #008000 #f0f9f0;
-    /* Global scaling as requested */
-    transform: scale(0.8);
-    transform-origin: top center;
+    scrollbar-width: none; /* Hide scrollbar */
   }
   body {
     @apply text-foreground;
@@ -102,25 +98,11 @@
 
     overflow-x: hidden;
     max-width: 100vw;
-    scrollbar-width: thin;
-    scrollbar-color: #008000 transparent;
+    scrollbar-width: none; /* Hide scrollbar */
   }
   html::-webkit-scrollbar,
   body::-webkit-scrollbar {
-    width: 10px;
-  }
-  html::-webkit-scrollbar-track,
-  body::-webkit-scrollbar-track {
-    background: #f0f9f0;
-  }
-  html::-webkit-scrollbar-thumb,
-  body::-webkit-scrollbar-thumb {
-    background: #008000;
-    border-radius: 0px;
-  }
-  html::-webkit-scrollbar-thumb:hover,
-  body::-webkit-scrollbar-thumb:hover {
-    background: #006600;
+    display: none; /* Hide scrollbar for Webkit */
   }
 }
 
